@@ -1,0 +1,10 @@
+.dotolist_container {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 600px) {
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+}
