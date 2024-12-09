@@ -1,0 +1,42 @@
+.todoinput_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 52vw;
+  z-index: 2;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0 3%;
+
+  background-image: url("/images/img/search/search.svg");
+  background-size: auto 56px;
+  background-repeat: no-repeat;
+
+  @media (max-width: 600px) {
+    width: 74vw;
+  }
+  @media (max-width: 1200px) {
+    width: 69vw;
+  }
+}
+
+.button_image {
+  height: 56px;
+  margin-left: 10px;
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.button_image_small {
+  height: 56px;
+  margin-left: 10px;
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
