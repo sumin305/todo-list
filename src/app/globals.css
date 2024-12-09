@@ -11,3 +11,20 @@
 * {
   font-family: NanumSquare;
 }
+
+:root {
+  --slate100: #f1f5f9;
+  --slate200: #e2e8f0;
+  --slate300: #cbd5e1;
+  --slate400: #94a3b8;
+  --slate500: #64748b;
+  --slate800: #1e293b;
+  --slate900: #0f172a;
+
+  --violet100: #ede9fe;
+  --violet600: #7c3aed;
+
+  --rose500: #f43f5e;
+  --lime300: #bef264;
+  --amber800: #92400e;
+}

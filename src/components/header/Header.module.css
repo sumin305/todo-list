@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+  background: white;
+  border-bottom: 1px solid var(--slate200);
+}
+
+.web {
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.web img {
+  padding-left: 18vw;
+}
+
+.tablet {
+  @media (max-width: 600px) or (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.tablet img {
+  padding-left: 3vw;
+}
+
+.mobile {
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
+.mobile img {
+  padding-left: 4vw;
+}
+
+.logo {
+  height: 40px;
+}

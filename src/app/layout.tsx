@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
-import { useEffect } from "react";
+import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {
   title: "todo list",
@@ -13,14 +13,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const result = await fetch(
-    "https://assignment-todolist-api.vercel.app/api/soom/items"
-  );
-  const data = await result.json();
   return (
     <html>
       <body>
-        {data}
+        <Header></Header>
         <h1>
           <Link href="/">WEB</Link>
         </h1>
