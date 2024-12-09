@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: "todo list",
