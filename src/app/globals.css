@@ -10,6 +10,8 @@
 }
 * {
   font-family: NanumSquare;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -27,4 +29,6 @@
   --rose500: #f43f5e;
   --lime300: #bef264;
   --amber800: #92400e;
+
+  --gray50: #f9fafb;
 }
