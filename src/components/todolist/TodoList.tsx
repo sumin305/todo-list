@@ -1,7 +1,6 @@
-import Done from "./Done";
-import Todo from "./Todo";
+import { TodoType } from "@/app/page";
+import Todo from "../todo/Todo";
 import styles from "./todolist.module.css";
-import { TodoType } from "../main/main";
 
 export interface TodoListProps {
   list: Array<TodoType>;
@@ -12,8 +11,8 @@ export default async function TodoList({ list }: TodoListProps) {
 
   return (
     <div className={styles.dotolist_container}>
-      <Todo todoList={todoList}></Todo>
-      <Done doneList={doneList}></Done>
+      <Todo todoList={todoList} isTodo={true}></Todo>
+      <Todo todoList={doneList} isTodo={false}></Todo>
     </div>
   );
 }

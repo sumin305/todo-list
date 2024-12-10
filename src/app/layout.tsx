@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import Header from "@/components/header/Header";
-import Main from "@/components/main/main";
 
 export const metadata: Metadata = {
   title: "todo list",
@@ -18,7 +17,7 @@ export default function RootLayout({
     <html>
       <body>
         <Header></Header>
-        <Main></Main>
+        <div className="layout">{children}</div>
       </body>
     </html>
   );

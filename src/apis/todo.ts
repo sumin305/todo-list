@@ -4,12 +4,6 @@ interface NameObject {
   name: string;
 }
 
-interface PatchObject {
-  name: string;
-  memo: string;
-  imageUrl: string;
-  isCompleted: boolean;
-}
 export const fetchTodos = async () => {
   const response = await fetch(`${host}/items`, {
     cache: "no-store",
@@ -43,7 +37,7 @@ export const postTodo = async (name: NameObject) => {
   return response.json();
 };
 
-export const patchTodo = async (itemId: number, updateData: PatchObject) => {
+export const patchTodo = async (itemId: number, updateData: any) => {
   const response = await fetch(`${host}/items/${itemId}`, {
     method: "PATCH",
     headers: {
