@@ -2,16 +2,19 @@
 import { postTodo } from "@/apis/todo";
 import { useState } from "react";
 import styles from "./todoInput.module.css";
+import { useRouter } from "next/navigation";
 
 export default function TodoInput() {
   const [name, setName] = useState("");
+  const router = useRouter();
   const handleAddButtonClick = async () => {
     const postResult = await postTodo({
       name: name,
     });
 
     if (postResult) {
-      alert("할 일 추가에 성공하였습니다.");
+      setName("");
+      router.refresh();
     }
   };
 
@@ -22,6 +25,7 @@ export default function TodoInput() {
   return (
     <div className={styles.todoinput_container}>
       <input
+        value={name}
         onChange={(e) => handleTodoNameOnChange(e)}
         className={styles.input}
         type="text"

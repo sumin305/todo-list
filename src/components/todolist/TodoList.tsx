@@ -1,15 +1,12 @@
-import { fetchTodos } from "@/apis/todo";
 import Done from "./Done";
 import Todo from "./Todo";
 import styles from "./todolist.module.css";
+import { TodoType } from "../main/main";
 
-export interface TodoType {
-  isCompleted: boolean;
-  name: string;
-  id: number;
+export interface TodoListProps {
+  list: Array<TodoType>;
 }
-export default async function TodoList() {
-  const list = await fetchTodos();
+export default async function TodoList({ list }: TodoListProps) {
   const todoList = list.filter((todo: TodoType) => !todo.isCompleted);
   const doneList = list.filter((todo: TodoType) => todo.isCompleted);
 

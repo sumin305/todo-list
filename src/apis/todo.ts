@@ -11,7 +11,9 @@ interface PatchObject {
   isCompleted: boolean;
 }
 export const fetchTodos = async () => {
-  const response = await fetch(`${host}/items`);
+  const response = await fetch(`${host}/items`, {
+    cache: "no-store",
+  });
   if (!response.ok) {
     throw new Error(`Failed to fetch todos: ${response.statusText}`);
   }
