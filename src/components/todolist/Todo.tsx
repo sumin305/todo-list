@@ -23,7 +23,8 @@ export default function Todo(props: TodoProps) {
       ) : (
         props.todoList.map((todo, index) => (
           <div key={index} className={styles.todo_item}>
-            {todo.name}
+            <img src="/icons/property-default/Property 1=Default.svg" />
+            <p className={styles.todo_item_text}>{todo.name}</p>
           </div>
         ))
       )}

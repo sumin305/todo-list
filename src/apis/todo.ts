@@ -1,3 +1,5 @@
+const host = "https://assignment-todolist-api.vercel.app/api/soom";
+
 interface NameObject {
   name: string;
 }
@@ -9,7 +11,7 @@ interface PatchObject {
   isCompleted: boolean;
 }
 export const fetchTodos = async () => {
-  const response = await fetch(`${process.env.NEXT_API_HOST}/items`);
+  const response = await fetch(`${host}/items`);
   if (!response.ok) {
     throw new Error(`Failed to fetch todos: ${response.statusText}`);
   }
@@ -17,7 +19,7 @@ export const fetchTodos = async () => {
 };
 
 export const fetchTodoById = async (itemId: number) => {
-  const response = await fetch(`${process.env.NEXT_API_HOST}/items/${itemId}`);
+  const response = await fetch(`${host}/items/${itemId}`);
   if (!response.ok) {
     throw new Error(`Failed to fetch todo by ID: ${response.statusText}`);
   }
@@ -25,7 +27,7 @@ export const fetchTodoById = async (itemId: number) => {
 };
 
 export const postTodo = async (name: NameObject) => {
-  const response = await fetch(`${process.env.NEXT_API_HOST}/items`, {
+  const response = await fetch(`${host}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +42,7 @@ export const postTodo = async (name: NameObject) => {
 };
 
 export const patchTodo = async (itemId: number, updateData: PatchObject) => {
-  const response = await fetch(`${process.env.NEXT_API_HOST}/items/${itemId}`, {
+  const response = await fetch(`${host}/items/${itemId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -55,7 +57,7 @@ export const patchTodo = async (itemId: number, updateData: PatchObject) => {
 };
 
 export const deleteTodo = async (itemId: number) => {
-  const response = await fetch(`${process.env.NEXT_API_HOST}/items/${itemId}`, {
+  const response = await fetch(`${host}/items/${itemId}`, {
     method: "DELETE",
   });
 
@@ -66,7 +68,7 @@ export const deleteTodo = async (itemId: number) => {
 };
 
 export const uploadImage = async (formData: any) => {
-  const response = await fetch(`${process.env.NEXT_API_HOST}/images/upload`, {
+  const response = await fetch(`${host}/images/upload`, {
     method: "POST",
     body: formData,
   });
