@@ -18,7 +18,7 @@ export default function TodoInput() {
     }
   };
 
-  const handleTodoNameOnChange = (e: any) => {
+  const handleTodoNameOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 

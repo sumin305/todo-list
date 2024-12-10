@@ -4,6 +4,12 @@ interface NameObject {
   name: string;
 }
 
+interface UpdateRequest {
+  name?: string;
+  memo?: string;
+  imageUrl?: string;
+  isCompleted?: boolean;
+}
 export const fetchTodos = async () => {
   const response = await fetch(`${host}/items`, {
     cache: "no-store",
@@ -37,7 +43,7 @@ export const postTodo = async (name: NameObject) => {
   return response.json();
 };
 
-export const patchTodo = async (itemId: number, updateData: any) => {
+export const patchTodo = async (itemId: number, updateData: UpdateRequest) => {
   const response = await fetch(`${host}/items/${itemId}`, {
     method: "PATCH",
     headers: {
@@ -63,7 +69,7 @@ export const deleteTodo = async (itemId: number) => {
   return true;
 };
 
-export const uploadImage = async (formData: any) => {
+export const uploadImage = async (formData: FormData) => {
   const response = await fetch(`${host}/images/upload`, {
     method: "POST",
     body: formData,

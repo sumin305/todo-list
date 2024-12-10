@@ -17,7 +17,8 @@ export default function Detail() {
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement | null>(null); // 파일 입력 요소 참조
   const param = useParams();
-  const id: string = param.id ? param.id : "";
+  const paramId = Array.isArray(param.id) ? param.id[0] : param.id || "";
+  const id: number = parseInt(paramId);
   const [detailTodo, setDetailTodo] = useState<TodoResponse>({
     isCompleted: false,
     imageUrl: "",
@@ -29,7 +30,7 @@ export default function Detail() {
 
   const [image, setImage] = useState("");
   const fetchDetail = async () => {
-    const result = await fetchTodoById(parseInt(id));
+    const result = await fetchTodoById(id);
     setDetailTodo(result);
     setImage(result.imageUrl);
   };
@@ -48,7 +49,7 @@ export default function Detail() {
     });
   };
 
-  const handleMemoChange = (e: any) => {
+  const handleMemoChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setDetailTodo({
       ...detailTodo,
       memo: e.target.value,
@@ -93,7 +94,7 @@ export default function Detail() {
     }
   };
 
-  const handleTodoNameChange = (e: any) => {
+  const handleTodoNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDetailTodo({
       ...detailTodo,
       name: e.target.value,
